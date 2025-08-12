@@ -48,12 +48,10 @@ const AIRProtocol: React.FC = () => {
       try {
         setScheduleItems(JSON.parse(saved));
       } catch {
-        // If parsing fails, use default items
         setScheduleItems(scheduleItems);
       }
     }
     
-    // Determine current phase based on time
     const now = new Date();
     const hour = now.getHours();
     const minute = now.getMinutes();
@@ -96,7 +94,7 @@ const AIRProtocol: React.FC = () => {
           subtitle: '4:30 AM–10:00 AM',
           description: 'Neural activation and cognitive domination protocols',
           gradient: 'success-gradient',
-          icon: <Crown className="h-8 w-8" />,
+          icon: <Crown className="h-6 w-6" />,
           emoji: '🌅'
         };
       case 'B':
@@ -105,7 +103,7 @@ const AIRProtocol: React.FC = () => {
           subtitle: '10:00 AM–7:00 PM',
           description: 'Reality-bending focus and skill amplification',
           gradient: 'power-gradient',
-          icon: <Brain className="h-8 w-8" />,
+          icon: <Brain className="h-6 w-6" />,
           emoji: '🧠'
         };
       case 'C':
@@ -114,7 +112,7 @@ const AIRProtocol: React.FC = () => {
           subtitle: '7:00 PM–10:30 PM',
           description: 'Tomorrow\'s greatness programming sequence',
           gradient: 'wisdom-gradient',
-          icon: <Target className="h-8 w-8" />,
+          icon: <Target className="h-6 w-6" />,
           emoji: '🎯'
         };
     }
@@ -123,66 +121,66 @@ const AIRProtocol: React.FC = () => {
   const totalProgress = Math.round((scheduleItems.filter(item => item.completed).length / scheduleItems.length) * 100);
 
   return (
-    <section className="mb-12 grain-texture">
-      <div className="glass-card-gradient rounded-3xl p-10 hover-lift">
+    <section className="mb-8 grain-texture">
+      <div className="glass-card-gradient rounded-3xl p-8 hover-lift">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-10 space-y-4 lg:space-y-0">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8 space-y-4 lg:space-y-0">
           <div>
-            <h2 className="text-4xl md:text-5xl font-black gradient-text flex items-center mb-4">
-              <Zap className="mr-4 h-10 w-10 text-purple-600" />
-              AIR 1 PROTOCOL v2.0
-              <Clock className="ml-4 h-8 w-8 text-blue-500" />
+            <h2 className="text-3xl font-black gradient-text flex items-center mb-3">
+              <Zap className="mr-3 h-8 w-8 text-purple-600" />
+              AIR PROTOCOL v2.0
+              <Clock className="ml-3 h-6 w-6 text-blue-500" />
             </h2>
-            <p className="text-xl md:text-2xl text-gray-700 font-black">
+            <p className="text-lg text-gray-700 font-bold">
               Structure creates freedom. No room for wandering thoughts—only inevitable victory.
             </p>
           </div>
           <button
             onClick={resetDay}
-            className="flex items-center space-x-3 evolution-gradient text-white px-8 py-4 rounded-2xl hover:scale-105 transition-all font-black shadow-xl text-lg"
+            className="flex items-center space-x-2 evolution-gradient text-white px-6 py-3 rounded-xl hover:scale-105 transition-all font-bold text-sm"
           >
-            <RotateCcw className="h-5 w-5" />
+            <RotateCcw className="h-4 w-4" />
             <span>RESET DAY</span>
           </button>
         </div>
 
         {/* Overall Progress */}
-        <div className="glass-card-dark rounded-3xl p-8 text-center mb-10">
-          <h3 className="text-3xl font-black text-white mb-4">DAILY DOMINATION STATUS</h3>
-          <div className="text-6xl font-black text-white mb-4">
+        <div className="glass-card-dark rounded-2xl p-6 text-center mb-8">
+          <h3 className="text-2xl font-black text-white mb-3">DAILY DOMINATION STATUS</h3>
+          <div className="text-4xl font-black text-white mb-3">
             {totalProgress}%
           </div>
-          <p className="text-lg text-white/80 font-bold mb-6">LEGENDARY COMPLETION RATE</p>
+          <p className="text-sm text-white/80 font-bold mb-4">LEGENDARY COMPLETION RATE</p>
           
-          <div className="w-full bg-white/30 rounded-full h-4">
+          <div className="w-full bg-white/30 rounded-full h-3">
             <div 
-              className="success-gradient h-4 rounded-full transition-all duration-1000"
+              className="success-gradient h-3 rounded-full transition-all duration-1000"
               style={{ width: `${totalProgress}%` }}
             ></div>
           </div>
           
-          <p className="text-xl text-white/90 font-black mt-6">
+          <p className="text-lg text-white/90 font-bold mt-4">
             Every completed task rewrites your neural architecture for inevitable success
           </p>
         </div>
         
         {/* Phase Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           {(['A', 'B', 'C'] as const).map((phase) => {
             const phaseInfo = getPhaseInfo(phase);
             const progress = getPhaseProgress(phase);
             const isCurrentPhase = currentPhase === phase;
             
             return (
-              <div key={phase} className={`glass-card rounded-3xl p-6 hover-lift transition-all ${isCurrentPhase ? 'ring-4 ring-purple-400 ring-opacity-50 scale-105' : ''}`}>
-                <div className={`${phaseInfo.gradient} rounded-2xl p-6 text-white mb-4`}>
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center space-x-3">
+              <div key={phase} className={`glass-card rounded-2xl p-5 hover-lift transition-all ${isCurrentPhase ? 'ring-2 ring-purple-400 ring-opacity-50 scale-105' : ''}`}>
+                <div className={`${phaseInfo.gradient} rounded-xl p-4 text-white mb-3`}>
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center space-x-2">
                       {phaseInfo.icon}
-                      <span className="text-2xl">{phaseInfo.emoji}</span>
+                      <span className="text-xl">{phaseInfo.emoji}</span>
                     </div>
                     <div className="flex flex-col items-end">
-                      <span className="text-sm font-black bg-white/30 px-3 py-1 rounded-full mb-1">
+                      <span className="text-xs font-black bg-white/30 px-2 py-1 rounded-full mb-1">
                         PHASE {phase}
                       </span>
                       {isCurrentPhase && (
@@ -192,20 +190,20 @@ const AIRProtocol: React.FC = () => {
                       )}
                     </div>
                   </div>
-                  <h3 className="font-black text-xl mb-2">{phaseInfo.title}</h3>
-                  <p className="text-sm opacity-90 font-bold">{phaseInfo.subtitle}</p>
+                  <h3 className="font-black text-lg mb-1">{phaseInfo.title}</h3>
+                  <p className="text-xs opacity-90 font-bold">{phaseInfo.subtitle}</p>
                 </div>
                 
-                <p className="text-gray-700 font-medium mb-4">{phaseInfo.description}</p>
+                <p className="text-gray-700 font-medium mb-3 text-sm">{phaseInfo.description}</p>
                 
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-sm font-black text-gray-600">COMPLETION</span>
-                  <span className="text-2xl font-black gradient-text">{progress}%</span>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs font-black text-gray-600">COMPLETION</span>
+                  <span className="text-xl font-black gradient-text">{progress}%</span>
                 </div>
                 
-                <div className="w-full bg-gray-200 rounded-full h-3">
+                <div className="w-full bg-gray-200 rounded-full h-2">
                   <div 
-                    className={`${phaseInfo.gradient} h-3 rounded-full transition-all duration-500`}
+                    className={`${phaseInfo.gradient} h-2 rounded-full transition-all duration-500`}
                     style={{ width: `${progress}%` }}
                   ></div>
                 </div>
@@ -215,70 +213,70 @@ const AIRProtocol: React.FC = () => {
         </div>
 
         {/* Detailed Schedule */}
-        <div className="space-y-8">
+        <div className="space-y-6">
           {(['A', 'B', 'C'] as const).map((phase) => {
             const phaseInfo = getPhaseInfo(phase);
             const phaseItems = scheduleItems.filter(item => item.phase === phase);
             const isCurrentPhase = currentPhase === phase;
             
             return (
-              <div key={phase} className={`glass-card rounded-3xl p-8 hover-lift transition-all ${isCurrentPhase ? 'ring-2 ring-purple-300' : ''}`}>
-                <div className="flex items-center space-x-4 mb-8">
-                  <div className={`${phaseInfo.gradient} p-4 rounded-2xl text-white`}>
+              <div key={phase} className={`glass-card rounded-2xl p-6 hover-lift transition-all ${isCurrentPhase ? 'ring-2 ring-purple-300' : ''}`}>
+                <div className="flex items-center space-x-3 mb-6">
+                  <div className={`${phaseInfo.gradient} p-3 rounded-xl text-white`}>
                     {phaseInfo.icon}
                   </div>
                   <div className="flex-grow">
-                    <div className="flex items-center space-x-4">
-                      <h3 className="text-3xl font-black gradient-text">PHASE {phase}: {phaseInfo.title}</h3>
-                      <span className="text-3xl">{phaseInfo.emoji}</span>
+                    <div className="flex items-center space-x-3">
+                      <h3 className="text-2xl font-black gradient-text">PHASE {phase}: {phaseInfo.title}</h3>
+                      <span className="text-2xl">{phaseInfo.emoji}</span>
                       {isCurrentPhase && (
-                        <span className="text-sm font-black bg-purple-100 text-purple-700 px-4 py-2 rounded-full animate-pulse">
+                        <span className="text-xs font-black bg-purple-100 text-purple-700 px-3 py-1 rounded-full animate-pulse">
                           🔥 CURRENT PHASE
                         </span>
                       )}
                     </div>
-                    <p className="text-lg text-gray-600 font-bold">{phaseInfo.subtitle}</p>
-                    <p className="text-gray-600 font-medium">{phaseInfo.description}</p>
+                    <p className="text-sm text-gray-600 font-bold">{phaseInfo.subtitle}</p>
+                    <p className="text-gray-600 font-medium text-sm">{phaseInfo.description}</p>
                   </div>
                 </div>
                 
-                <div className="grid gap-4">
+                <div className="grid gap-3">
                   {phaseItems.map((item, index) => (
                     <div
                       key={item.id}
                       onClick={() => toggleCompletion(item.id)}
-                      className={`flex items-center space-x-4 p-6 rounded-2xl cursor-pointer transition-all hover:scale-[1.02] ${
+                      className={`flex items-center space-x-3 p-4 rounded-xl cursor-pointer transition-all hover:scale-[1.01] ${
                         item.completed 
-                          ? 'glass-card-gradient border-2 border-green-300 bg-green-50/50' 
+                          ? 'glass-card-gradient border border-green-300 bg-green-50/50' 
                           : 'glass-card hover:bg-white/60'
                       }`}
                     >
                       <div className="flex-shrink-0">
                         {item.completed ? (
-                          <CheckCircle className="h-8 w-8 text-green-600" />
+                          <CheckCircle className="h-6 w-6 text-green-600" />
                         ) : (
-                          <Circle className="h-8 w-8 text-gray-400 hover:text-purple-500" />
+                          <Circle className="h-6 w-6 text-gray-400 hover:text-purple-500" />
                         )}
                       </div>
                       
                       <div className="flex-grow">
-                        <div className="flex items-center space-x-4 mb-2">
-                          <span className="text-sm font-black text-purple-600 bg-purple-100 px-4 py-2 rounded-full">
+                        <div className="flex items-center space-x-3 mb-1">
+                          <span className="text-xs font-black text-purple-600 bg-purple-100 px-3 py-1 rounded-full">
                             {item.time}
                           </span>
                           <span className="text-xs font-black text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
                             #{index + 1}
                           </span>
-                          <h4 className={`text-xl font-black ${item.completed ? 'text-green-700' : 'text-gray-800'}`}>
+                          <h4 className={`text-lg font-black ${item.completed ? 'text-green-700' : 'text-gray-800'}`}>
                             {item.task}
                           </h4>
                         </div>
-                        <p className={`text-lg ${item.completed ? 'text-green-600' : 'text-gray-600'} font-medium`}>
+                        <p className={`${item.completed ? 'text-green-600' : 'text-gray-600'} font-medium text-sm`}>
                           {item.description}
                         </p>
                       </div>
                       
-                      <div className="text-3xl">
+                      <div className="text-2xl">
                         {item.completed ? '✅' : '⚡'}
                       </div>
                     </div>
@@ -290,23 +288,23 @@ const AIRProtocol: React.FC = () => {
         </div>
 
         {/* Motivational Footer */}
-        <div className="mt-10 glass-card-dark rounded-3xl p-8 text-center">
-          <h3 className="text-3xl font-black text-white mb-4">THE LEGENDARY PATH MANIFESTO</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
+        <div className="mt-8 glass-card-dark rounded-2xl p-6 text-center">
+          <h3 className="text-2xl font-black text-white mb-3">THE LEGENDARY PATH MANIFESTO</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-white">
             <div>
-              <div className="text-4xl mb-3">🔥</div>
-              <p className="font-black text-lg">STRUCTURE CREATES FREEDOM</p>
-              <p className="text-sm opacity-90">No space for mental wandering</p>
+              <div className="text-3xl mb-2">🔥</div>
+              <p className="font-black">STRUCTURE CREATES FREEDOM</p>
+              <p className="text-xs opacity-90">No space for mental wandering</p>
             </div>
             <div>
-              <div className="text-4xl mb-3">⚡</div>
-              <p className="font-black text-lg">EVERY MOMENT MATTERS</p>
-              <p className="text-sm opacity-90">Systematic greatness building</p>
+              <div className="text-3xl mb-2">⚡</div>
+              <p className="font-black">EVERY MOMENT MATTERS</p>
+              <p className="text-xs opacity-90">Systematic greatness building</p>
             </div>
             <div>
-              <div className="text-4xl mb-3">👑</div>
-              <p className="font-black text-lg">LEGENDARY STATUS LOADING</p>
-              <p className="text-sm opacity-90">Inevitable success protocols</p>
+              <div className="text-3xl mb-2">👑</div>
+              <p className="font-black">LEGENDARY STATUS LOADING</p>
+              <p className="text-xs opacity-90">Inevitable success protocols</p>
             </div>
           </div>
         </div>

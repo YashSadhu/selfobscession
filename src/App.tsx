@@ -10,41 +10,41 @@ function App() {
     <div className="min-h-screen">
       <Header />
       
-      <main className="max-w-7xl mx-auto px-8 py-12">
+      <main className="max-w-6xl mx-auto px-6 py-8">
         <DailyAffirmation />
-        <AIRProtocol />
         <ValuesSection />
         <ToolsGrid />
+        <AIRProtocol />
       </main>
 
-      <footer className="glass-card-dark rounded-t-3xl py-12 mt-16 grain-texture">
-        <div className="max-w-7xl mx-auto px-8 text-center">
-          <div className="mb-8">
-            <h3 className="text-3xl font-black text-white mb-4">LEGENDARY STATUS: FULLY ACTIVATED</h3>
-            <p className="text-xl text-white/90 font-black">
+      <footer className="glass-card-dark rounded-t-3xl py-8 mt-12 grain-texture">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <div className="mb-6">
+            <h3 className="text-2xl font-black text-white mb-3">LEGENDARY STATUS: FULLY ACTIVATED</h3>
+            <p className="text-lg text-white/90 font-bold">
               Every moment of today is building the empire that tomorrow will worship 👑
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div className="glass-card-gradient rounded-3xl p-8 hover-lift">
-              <div className="text-4xl mb-3">🔥</div>
-              <p className="font-black text-xl text-gray-800 mb-2">UNSTOPPABLE</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div className="glass-card-gradient rounded-2xl p-6 hover-lift">
+              <div className="text-3xl mb-2">🔥</div>
+              <p className="font-black text-lg text-gray-800 mb-1">UNSTOPPABLE</p>
               <p className="text-sm text-gray-600 font-bold">Energy Frequency</p>
             </div>
-            <div className="glass-card-gradient rounded-3xl p-8 hover-lift">
-              <div className="text-4xl mb-3">💎</div>
-              <p className="font-black text-xl text-gray-800 mb-2">DIAMOND</p>
+            <div className="glass-card-gradient rounded-2xl p-6 hover-lift">
+              <div className="text-3xl mb-2">💎</div>
+              <p className="font-black text-lg text-gray-800 mb-1">DIAMOND</p>
               <p className="text-sm text-gray-600 font-bold">Mental Architecture</p>
             </div>
-            <div className="glass-card-gradient rounded-3xl p-8 hover-lift">
-              <div className="text-4xl mb-3">⚡</div>
-              <p className="font-black text-xl text-gray-800 mb-2">INFINITE</p>
+            <div className="glass-card-gradient rounded-2xl p-6 hover-lift">
+              <div className="text-3xl mb-2">⚡</div>
+              <p className="font-black text-lg text-gray-800 mb-1">INFINITE</p>
               <p className="text-sm text-gray-600 font-bold">Reality Potential</p>
             </div>
           </div>
           
-          <p className="text-lg text-white/80 font-black">
+          <p className="text-sm text-white/80 font-bold">
             Built by greatness, for greatness. Version ∞ of existence loading... 🌟
           </p>
         </div>
